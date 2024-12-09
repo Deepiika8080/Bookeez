@@ -1,7 +1,8 @@
 "use client"
 import { useEffect, useState } from "react";
 import "./styles/layout.css";
-import Banner from "./components/Banner";
+import Sidebar from "./components/Sidebar";
+import SearchBar from "./components/SearchBar";
 
 const Home = () => {
   const [Client, SetClient] = useState(false)
@@ -13,8 +14,12 @@ const Home = () => {
   if (!Client) return null;
 
   return (
-    <div className="main">
-         <Banner/>
+    <div className="main flex">
+      
+      <Sidebar/>
+      <div className="flex-grow ">
+      <SearchBar/>
+      </div>
     </div>
   );
 }
